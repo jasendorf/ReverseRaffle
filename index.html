@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Reverse Raffle</title>
+	<link rel="stylesheet" href="./css/jquery.ui.all.css">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/demos.css">
+	<link rel="stylesheet" href="./css/rr.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+</head>
+<body>
+
+<div id="dialog-message" title="Winner!">
+	<p id="winner-text">Congratulations!</p>
+	<p id="winner" class="winner-format">You have won $100!</p>
+	<p id="draw-instructions"></p>
+	<p id="draw-instructions-winner">1 WINNING TICKET!</p>
+</div>
+
+<div id="dialog-log" title="Raffle Log">
+	<div id="draw-log" style="height:600px; width:100%;">
+		<div id="draw-num" style="position: absolute; float:left; left:0%; width:15%; text-align: center;">
+			<span style="font-weight: bold;">Draw</span><br>
+		</div>
+		<div id="ticket-num" style="position: absolute; float:left; left:15%; width:20%; text-align: center;">
+			<span style="font-weight: bold;">Ticket No</span><br>
+		</div>
+		<div id="winner-loser" style="position: absolute; float:left; left:35%; width:20%; text-align: center;">
+			<span style="font-weight: bold;">Result</span><br>
+		</div>
+		<div id="draw-time" style="position: absolute; float:left; left:55%; width:45%; text-align: center;">
+			<span style="font-weight: bold;">Time</span><br>
+		</div>
+		<span id="DrawCounter" style="display:none;">0</span>
+	</div>
+</div>
+
+<div id="header" class="header" align="center">
+	<div id="left-header">
+		<div style="position: relative; float:left; height: 100%; ">
+		<img id="showSettings" src="./images/settings.png" alt="Hide Settings" style="position: relative; float:left; margin:1%; height: 100%; ">
+		</div>
+	</div>
+	<div id="center-header"><span id="RaffleTitle">HEADER</span></div>
+	<div id="right-header"  align="right">Remaining / Total: <span id="ticketsRemaining"> </span> / <span id="ticketsTotal"></span></div>
+</div>
+
+<div id="board" class="board"></div>
+
+<div id="footer" class="footer" align="center">
+	<div id="legend-unsold" class="legend-block">
+		<div class="legend-text">UNSOLD</div>
+	</div>
+	<div id="legend-winner" class="legend-block">
+		<div class="legend-text">WINNER</div>
+	</div>
+	<div id="legend-loser" class="legend-block">
+		<div class="legend-text">LOSER</div>
+	</div>
+	<div id="legend-board" class="legend-block">
+		<div class="legend-text">SOLD (ON THE BOARD)</div>
+	</div>
+</div>
+
+<div id="settings" class="toggler">
+	<div id="effect" class="ui-widget-content ui-corner-all">
+		<h3 class="ui-widget-header ui-corner-all">Settings</h3>
+		<h2 style="padding-top: 12px;">Board Setup</h2>
+		<hr>
+		<label></br>Title</br></label>
+		<input id="TitleInput" style="width: 98%; margin-bottom:12px;" type="text" value="Reverse Raffle"></input>
+		<label></br>Tenth Ticket Winner Value</br></label>
+		<input id="TenthTicketVal" style="width: 30%; margin-bottom:12px;" type="text" value="$100"></input>
+		<label></br>Number of Tickets</br></label>
+		<select name="DefaultBoards" id="DefaultBoards">
+			<option value="100tix">100</option>
+			<option value="150tix">150</option>
+			<option value="200tix">200</option>
+			<option value="205tix">250</option>
+			<option value="300tix">300</option>
+		</select>
+		<a href="#" id="UpdateBoard" class="ui-state-default ui-corner-all">Update Board</a>
+<!--		<div style="padding-top: 4px; width: 100%; float:left;">
+			<div style="width: 25%; float:left;">
+			<label style="width: 80%; top: 0%; float:left;  "></br>Rows</label>
+			</div>
+			<div style="width: 25%; float:left;">
+			<label style="width: 80%; top: 0%; float:left;  "></br>Columns</label>
+			</div>
+		</div>
+		<div style="width: 100%; float:left; margin-bottom: 16px; ">
+			<div style="width: 25%; float:left;">
+			<input id="NumRows" style="width: 80%; top: 40%; float:left;  " type="text" value="20"></input>
+			</div>
+			<div style="width: 25%; float:left;">
+			<input id="NumCols" style="width: 80%; top: 40%; float:left;  " type="text" value="20"></input>
+			</div>
+			<div id="CustomUpdateBoard" class="ui-state-default ui-corner-all" style="bottom:100%; height: 100%; ">Update Board</div>
+		</div> -->
+		<h2 style="padding-top: 12px;">Bulk Sold/Unsold</h2>
+		<hr>
+		<div style="width: 100%; float:left; padding: 8px 0px; ">
+			<div style="width: 100%; float:left;">
+			<label id="lblMarkSold" style="width: 80%; top: 40%; float:left; font-size: 1.25em; padding: 3px 0px;" type="text" value="20">Mark Tickets Sold</label>
+			</div>
+			<div style="width: 25%; float:left;">
+			<input id="startSold" style="width: 80%; top: 40%; float:left;  " type="text" value="75"></input>
+			</div>
+			<div style="width: 25%; float:left;">
+			<input id="endSold" style="width: 80%; top: 40%; float:left;  " type="text" value="90"></input>
+			</div>
+			<div id="UpdateSold" class="ui-state-default ui-corner-all">Mark Sold</div>
+		</div>
+		<div style="width: 100%; float:left; padding-top: 4px; padding-bottom: 12px; ">
+			<div style="width: 100%; float:left;">
+			<label id="lblMarkUnsold" style="width: 80%; top: 40%; float:left; font-size: 1.25em; padding: 3px 0px;" type="text" value="20">Mark Tickets Unsold</label>
+			</div>
+			<div style="width: 25%; float:left;">
+			<input id="startUnsold" style="width: 80%; top: 40%; float:left;  " type="text" value="38"></input>
+			</div>
+			<div style="width: 25%; float:left;">
+			<input id="endUnsold" style="width: 80%; top: 40%; float:left;  " type="text" value="99"></input>
+			</div>
+			<div id="UpdateUnsold" class="ui-state-default ui-corner-all">Mark Unsold</div>
+		</div>
+		<hr>
+
+		<div align="center" style="width: 100%; float:left; padding-top: 20px; ">
+			<a href="#" id="RunRaffle" class="ui-state-default ui-corner-all" style="width:100%; display:none; ">Run Raffle</a>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+</body>
+
+	<script src="./js/jquery-1.9.1.js"></script>
+	<script src="./js/rr.js"></script>
+
+	<script src="./jquery-ui-1.10.3/jquery.ui.effect.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.effect-slide.js"></script>
+
+	<script src="./jquery-ui-1.10.3/jquery.ui.core.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.widget.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.mouse.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.button.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.draggable.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.position.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.resizable.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.button.js"></script>
+	<script src="./jquery-ui-1.10.3/jquery.ui.dialog.js"></script>
+
+</html>

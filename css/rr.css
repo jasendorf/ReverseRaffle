@@ -1,0 +1,385 @@
+/* Reverse Raffle Stylesheet 
+   v0.1 | 2013-09-24
+   License: none (public domain)
+*/
+
+/* Global Body */
+	body {
+		overflow: hidden;
+		background: black; 
+	}
+	
+/* Header */
+	.header { 
+		width: 100%; 
+		/* top: 1%; */
+		height: 5%; 
+		position: absolute; 
+		font-size: 24px;
+		font-weight:bold;
+		color: white;
+	} 
+	#left-header {
+		width: 30%; 
+		height: 100%; 
+		position: relative; 
+		float:left; 
+	}
+	#center-header {
+		width: 40%; 
+		height: 100%; 
+		position: relative;
+		float:left;
+		display: none;
+		padding-top: 5px;
+	}
+	#right-header {
+		width: 29%; 
+		height: 100%; 
+		font-size: 20px;
+		color: yellow;
+		position: relative; 
+		float:left;
+		display: none;
+		padding-top: 8px;
+	}
+
+/* Footer */
+	.footer { 
+		width: 98%; 
+		margin-left: 2%;
+		height: 4%; 
+		top: 5%;
+		position: absolute; 
+		background: black; 
+		cursor: none;
+		font-size: 18px;
+		font-weight:bold;
+	} 	
+
+	.board { 
+		width: 100%; 
+		height: 90%; 
+		top: 10%;
+		position: absolute; 
+		background: black; 
+	} 
+
+	#button {
+		font-size: 12px;
+		padding: .5em 1em; 
+		text-decoration: none; 
+	}
+	
+	.legend-text {
+		position: absolute;
+		top: 15%;
+		height: 50%; 
+		text-align: center;
+
+		margin-left: 2%;
+		margin-right: 2%;
+		width: 96%; 
+	}
+	
+	.legend-block { 
+		height: 90%; 
+		float:left;
+		margin:0px 2px;
+		border:1px solid yellow;
+		text-align: center;
+		position: relative; 
+		border-radius:4px; 
+	} 
+	
+	#legend-unsold {
+		width: 29%; 
+		background-color:#777777;
+		color:black;
+	}
+	#legend-winner {
+		width: 19%; 
+		background-color:#00AA33;
+		color:white;
+	}
+	#legend-loser {
+		width: 19%; 
+		background-color:#DD1111;
+		color:white;
+	}
+	#legend-board {
+		width: 29%; 
+		background-color:black;
+		color:white;
+	}
+		
+	.ticketblock { 
+		width: 10%; 
+		height: 5%; 
+		position: relative; 
+		background: black; 
+		float:left;
+		/*vertical-align: middle;*/
+		/*display: table;*/
+	} 
+
+	.ticketblock { 
+		width: 10%; 
+		height: 5%; 
+		position: relative; 
+		background: black; 
+		float:left;
+		/*vertical-align: middle;*/
+		/*display: table;*/
+	} 
+	.ticket { 
+		width: 99%; 
+		height: 98%; 
+		position:absolute; 
+		border:1px solid yellow;
+		border-radius:8px; 
+
+		font-size: 12px;
+		font-weight:bold;
+		color: white;
+
+		text-align: center;
+		
+		cursor: default;
+	} 
+	.ticketcenter { 
+		margin-left: 2%;
+		margin-right: 2%;
+		width: 96%; 
+
+		border:none;
+		margin-top: 5%;
+		font-size: 1.75em;
+	} 
+
+	.tickettext { 
+		margin-top: 10px; 
+		/* font-size: 12px; */
+		font-size: 1em;
+		font-weight:bold;
+		position: relative; 
+		color: white;
+		vertical-align: middle;
+	} 
+/*	.ticket:hover {
+		background-color:#ffff66;
+		color:black;
+	}
+*/
+	.ticket-highlight:hover {
+		background-color:#ffff66;
+		color:black;
+	}
+
+	.draw {
+		border:1px solid #282828 ;
+		width: 50%;
+		margin-left: 25%;
+		cursor: pointer; 
+	}
+	.draw:hover {
+		border:1px solid #ffff66;
+		background-color:#0033FF; /* Blue */
+		color: #ffff66;
+	}
+	.unsold {
+		background-color:#777777;
+		color:black;
+	}
+	.unsold:hover, .unsold:hover p {
+		background-color:#777777;
+		color:black;
+		cursor: default; 
+	}
+	.tenth {
+		background-color:blue;
+		text-align:center;
+		color:white;
+	}
+	.loser, .loser:hover {
+		background-color:#DD1111;
+		text-align:center;
+		color:white;
+	}
+	.winner, .winner:hover  {
+		background-color:#00AA33;
+		text-align:center;
+		color:white;
+	}
+	.toggle-sold {
+		float:left; 
+		text-decoration: underline; 
+		margin-left:10%; 
+		width:40%; 
+		font-size:10px; 
+		background-color: black; 
+		color: white; 
+		border: 0px solid lightgreen; 
+		cursor: pointer; 
+		padding-bottom: 1px;
+		border-radius:3px; 
+	 }
+	.toggle-unsold {
+		float:left; 
+		text-decoration: underline; 
+		width:40%; 
+		font-size:10px; 
+		background-color: #777; 
+		color: black; 
+		border: 0px solid lightgreen; 
+		cursor: pointer;
+		padding-bottom: 1px;
+		border-radius:2px; 
+	}
+	
+	.toggleticket {
+		height: 20%; 
+		width: 50%; 
+		margin-left: 25%;
+		color: black; 
+		background-color: lightgreen; 
+		border:1px solid lightgreen;
+		border-radius:2px; 
+		font-size: 0.8em;
+		z-index: 99;
+	}
+	.toggleticket:hover {
+		cursor: pointer;
+		background-color:darkgreen;
+		color:white;
+	}
+	.drawticket {
+		/* height: 30%; */ 
+		width: 40%; 
+		margin-left: 30%;
+		color: red; 
+		/* background-color: OrangeRed; */
+		border:1px solid OrangeRed;
+		border-radius:2px; 
+		/* cursor: none; */
+	}
+	.drawticket:hover  {
+		cursor: pointer;
+		background-color:red;
+		color:yellow;
+		cursor: pointer;
+	}
+	
+	#effect { 
+		width: 240px; 
+		height: 100%; 
+		padding: 0.4em; 
+		position: relative; 
+	} 
+	#effect h3 { 
+		margin: 0; 
+		padding: 0.4em; 
+		text-align: center; 
+	}
+
+/* Setup Toggle Div */
+	.toggler { 
+		top: 10%; 
+		position: absolute; 
+		height: 85%; 
+	} 
+	.toggler h2 { 
+		margin: 12px 0px 8px 0px; 
+		height: auto; 
+		font-size: 2em; 
+		width: 100%;
+		position: relative; 
+	} 
+	#UpdateBoard{
+		font-size: 10px;
+		padding: .0em 1em; 
+		text-decoration: none; 
+	}
+	#CustomUpdateBoard{
+		float: left;
+		cursor: pointer;
+		margin-top: 4px;
+		margin-left: 8px;
+		font-size: 10px;
+		padding: .5em 1em; 
+		text-decoration: none; 
+		width: 68px;
+	}
+	#UpdateUnsold{
+		cursor: pointer;
+		margin-top: 4px;
+		margin-left: 8px;
+		float:left;
+		font-size: 10px;
+		padding: .5em 1em; 
+		text-decoration: none; 
+		width: 56px;
+	}
+	#UpdateSold{
+		cursor: pointer;
+		margin-top: 4px;
+		margin-left: 8px;
+		float:left;
+		font-size: 10px;
+		padding: .5em 1em; 
+		text-decoration: none; 
+		width: 56px;
+	}
+	#RunRaffle{
+		font-size: 14px;
+		padding: .5em 1em; 
+		text-decoration: none; 
+	}
+	
+/* Undo Image */
+	.undo-draw {
+		position: relative; 
+		/*margin: 0% 20%; 
+		float: left; 
+		width: 60%; 
+		display:none; */
+	}
+	.undo-draw:hover {
+		background-color: red; 
+	}
+	.undo-icon {
+		position: relative; 
+		/* float: left; 
+		top: 5%; 
+		left: 5%;*/ 
+		width: 15%; 
+		/* display:none; */
+	}
+
+/* Log Dialog Popup */
+	#dialog-log {
+		display:none; 
+		height: 100%;
+/*		text-align: center; 
+		font-size: 180%; */ 
+	}
+
+/* Winner Dialog Popup */
+	#dialog-message {
+		display:none; 
+		text-align: center; 
+		font-size: 180%; 
+	}
+	#draw-instructions {
+		margin-top: 10px;
+	}
+	#draw-instructions-winner {
+		margin-top: 5px; 
+		font-weight:bold;
+	}
+	.winner-format {
+		margin-top: 10px; 
+		text-decoration: underline; 
+		color:red; 
+	}
+
