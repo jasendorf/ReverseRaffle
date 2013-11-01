@@ -1,14 +1,11 @@
 Reverse Raffle Board
 Author: Eric L Griffin
 
-This was project to create a configurable display if a Reverse Raffle board.
+This was project to create a system to configure and display a reverse raffle board.  Reverse Raffles are a popular fundraiser that typically includes a dinner prior to the raffle and then a raffle.  Commonly there are 100 to 300 tickets sold, and then all the sold tickets are displayed and the the first ticket draw out will win a cash prize and then every tenth ticket thereafter until there are 10 tickets remaining.
 
 What is a Reverse Raffle
 ------------------------
 Refreshments ... Dinner ... Raffle
-
-A Reverse Raffle fundraiser is often a dinner 
-
 
 Reverse Raffle Common Rules
 ---------------------------
