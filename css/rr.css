@@ -6,7 +6,7 @@
 /* Global Body */
 	body {
 		overflow: hidden;
-		background: black; 
+		background: white; 
 	}
 	
 /* Header */
@@ -17,7 +17,7 @@
 		position: absolute; 
 		font-size: 24px;
 		font-weight:bold;
-		color: white;
+		color: black;
 	} 
 	#left-header {
 		width: 30%; 
@@ -37,7 +37,7 @@
 		width: 29%; 
 		height: 100%; 
 		font-size: 20px;
-		color: yellow;
+		color: black;
 		position: relative; 
 		float:left;
 		display: none;
@@ -51,7 +51,7 @@
 		height: 4%; 
 		top: 5%;
 		position: absolute; 
-		background: black; 
+		background: white; 
 		cursor: none;
 		font-size: 18px;
 		font-weight:bold;
@@ -62,7 +62,7 @@
 		height: 90%; 
 		top: 10%;
 		position: absolute; 
-		background: black; 
+		background: white; 
 	} 
 
 	#button {
@@ -86,7 +86,7 @@
 		height: 90%; 
 		float:left;
 		margin:0px 2px;
-		border:1px solid yellow;
+		border:1px solid purple;
 		text-align: center;
 		position: relative; 
 		border-radius:4px; 
@@ -109,15 +109,15 @@
 	}
 	#legend-board {
 		width: 29%; 
-		background-color:black;
-		color:white;
+		background-color:white;
+		color:black;
 	}
 		
 	.ticketblock { 
 		width: 10%; 
 		height: 5%; 
 		position: relative; 
-		background: black; 
+		background: white; 
 		float:left;
 		/*vertical-align: middle;*/
 		/*display: table;*/
@@ -127,7 +127,7 @@
 		width: 10%; 
 		height: 5%; 
 		position: relative; 
-		background: black; 
+		background: white; 
 		float:left;
 		/*vertical-align: middle;*/
 		/*display: table;*/
@@ -136,12 +136,12 @@
 		width: 99%; 
 		height: 98%; 
 		position:absolute; 
-		border:1px solid yellow;
+		border:1px solid black;
 		border-radius:8px; 
 
 		font-size: 12px;
 		font-weight:bold;
-		color: white;
+		color: black;
 
 		text-align: center;
 		
@@ -163,7 +163,7 @@
 		font-size: 1em;
 		font-weight:bold;
 		position: relative; 
-		color: white;
+		color: black;
 		vertical-align: middle;
 	} 
 /*	.ticket:hover {
@@ -192,7 +192,7 @@
 		color:black;
 	}
 	.unsold:hover, .unsold:hover p {
-		background-color:#777777;
+		background-color:#444444;
 		color:black;
 		cursor: default; 
 	}
@@ -217,8 +217,8 @@
 		margin-left:10%; 
 		width:40%; 
 		font-size:10px; 
-		background-color: black; 
-		color: white; 
+		background-color: white; 
+		color: black; 
 		border: 0px solid lightgreen; 
 		cursor: pointer; 
 		padding-bottom: 1px;
@@ -229,9 +229,9 @@
 		text-decoration: underline; 
 		width:40%; 
 		font-size:10px; 
-		background-color: #777; 
+		background-color: white; 
 		color: black; 
-		border: 0px solid lightgreen; 
+		border: 0px solid red; 
 		cursor: pointer;
 		padding-bottom: 1px;
 		border-radius:2px; 
